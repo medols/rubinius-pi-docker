@@ -8,5 +8,5 @@ services:
 script:
   - sudo apt-get update
   - sudo apt-get install qemu-user-static
-  - docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
+  - docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v $PWD/setup.sh:/opt/setup.sh aarch64/ubuntu /bin/bash -c "cd /opt; ./setup.sh"
 
