@@ -25,4 +25,5 @@ script:
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 #- ls -al /usr/bin/qemu-aarch64-static
 #- docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
-- docker run --rm aarch64/ubuntu date
+- docker events& 
+- docker run --rm aarch64/ubuntu /bin/date
