@@ -9,6 +9,6 @@ script:
   - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
   - sudo apt-get update
   - sudo apt-get install qemu-user-static
-  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-  - docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v $PWD/setup.sh:/opt/setup.sh aarch64/ubuntu /bin/bash -c "cd /opt; ./setup.sh"
+  - sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - sudo docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v $PWD/setup.sh:/opt/setup.sh aarch64/ubuntu /bin/bash -c "cd /opt; ./setup.sh"
 
