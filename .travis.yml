@@ -1,0 +1,7 @@
+sudo: required
+services:
+- docker
+language: bash
+script:
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+- docker run aarch64/ubuntu /bin/bash --version
