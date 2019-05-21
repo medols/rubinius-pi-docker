@@ -7,7 +7,7 @@ services:
 
 before_install:
   - docker events& 
-  - docker pull aarch64/ubuntu
+  - docker pull arm64v8/ubuntu
   - docker image ls
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
@@ -33,4 +33,4 @@ script:
 #- docker run --rm mplatform/mquery golang
 #- ls -al /usr/bin/qemu-aarch64-static
 #- docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
-  - docker run --rm aarch64/ubuntu /bin/date
+  - docker run --rm arm64v8/ubuntu /bin/date
