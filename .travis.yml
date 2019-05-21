@@ -11,7 +11,8 @@ script:
 #  - sudo apt-get install qemu-user-static
 #  - sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
 #  - sudo docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v $PWD/setup.sh:/opt/setup.sh aarch64/ubuntu /bin/bash -c "cd /opt; ./setup.sh"
-  - sudo docker run --rm --privileged multiarch/qemu-user-static:register
+  - sudo docker run --rm --privileged multiarch/qemu-user-static:register --reset
   - wget https://github.com/multiarch/qemu-user-static/releases/download/v4.0.0/qemu-aarch64-static -O /tmp/qemu-aarch64-static
+  - chmod 777 /tmp/qemu-aarch64-static
   - sudo docker run -v /tmp/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v $PWD/setup.sh:/opt/setup.sh aarch64/ubuntu /bin/bash -c "cd /opt; ./setup.sh"
 
