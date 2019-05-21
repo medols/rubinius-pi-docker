@@ -5,38 +5,8 @@ language: bash
 services:
   - docker
 
-#before_install:
-#  - docker events& 
-#  - docker pull arm64v8/ubuntu
-#  - docker image ls
-#  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-
 script:
   - sudo apt-get update
   - sudo apt-get install qemu-user-static
-  - docker events& 
-  - docker pull arm64v8/ubuntu
-  - docker image ls
   - docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
-  - docker run --rm arm64v8/ubuntu /bin/date
-#- sudo apt-get install \
-#    apt-transport-https \
-#    ca-certificates \
-#    curl \
-#    gnupg-agent \
-#    software-properties-common
-#- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#- sudo add-apt-repository \
-#   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-#   $(lsb_release -cs) \
-#   stable"
-#- |
-#  curl https://get.docker.com | sh
-#  mkdir -p ~/.docker
-#  echo '{ "experimental": "enabled" }' > ~/.docker/config.json
-#  docker version
-#- docker run --rm mplatform/mquery golang
-#- ls -al /usr/bin/qemu-aarch64-static
-#- docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
-#  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
