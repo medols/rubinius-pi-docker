@@ -2,8 +2,8 @@
 
 locale-gen en_US.UTF-8
 apt-get update
-apt-get upgrade
-apt-get install make clang-3.6 g++ ruby-dev libncurses-dev zlib1g-dev libssl-dev libedit-dev libncursesw5-dev git
+apt-get -y upgrade
+apt-get -y install make clang-3.6 g++ ruby-dev libncurses-dev zlib1g-dev libssl-dev libedit-dev libncursesw5-dev git
 ln -s /usr/bin/llvm-config-3.6 /usr/bin/llvm-config
 mkdir -p /home/pi
 cd /home/pi
