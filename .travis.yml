@@ -1,14 +1,15 @@
 sudo: required
 services:
-- docker
+  - docker
 language: bash
 before_install:
-- docker pull aarch64/ubuntu
-- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - docker events& 
+  - docker pull aarch64/ubuntu
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 script:
-- sudo apt-get update
-- sudo apt-get install qemu-user-static
+  - sudo apt-get update
+  - sudo apt-get install qemu-user-static
 #- sudo apt-get install \
 #    apt-transport-https \
 #    ca-certificates \
@@ -28,5 +29,4 @@ script:
 #- docker run --rm mplatform/mquery golang
 #- ls -al /usr/bin/qemu-aarch64-static
 #- docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
-- docker events& 
-- docker run --rm aarch64/ubuntu /bin/date
+  - docker run --rm aarch64/ubuntu /bin/date
