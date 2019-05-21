@@ -4,4 +4,4 @@ services:
 language: bash
 script:
 - docker run --rm --privileged multiarch/qemu-user-static:register
-- docker run --rm aarch64/ubuntu /bin/bash --version
+- docker run --rm aarch64/ubuntu bash --version
