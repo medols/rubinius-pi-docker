@@ -1,10 +1,14 @@
 sudo: required
+
+language: bash
+
 services:
   - docker
-language: bash
+
 before_install:
   - docker events& 
   - docker pull aarch64/ubuntu
+  - docker image ls
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 script:
