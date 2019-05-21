@@ -3,5 +3,10 @@ services:
 - docker
 language: bash
 script:
-- docker run --rm --privileged multiarch/qemu-user-static:register
-- docker run --rm aarch64/ubuntu date
+- |
+  curl https://get.docker.com | sh
+  mkdir -p ~/.docker
+  echo '{ "experimental": "enabled" }' > ~/.docker/config.json
+  docker version
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+- docker run aarch64/ubuntu date
