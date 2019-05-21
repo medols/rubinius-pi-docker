@@ -2,6 +2,10 @@ sudo: required
 services:
 - docker
 language: bash
+before_install:
+- docker pull aarch64/ubuntu
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
 script:
 - sudo apt-get update
 - sudo apt-get install qemu-user-static
@@ -22,7 +26,6 @@ script:
 #  echo '{ "experimental": "enabled" }' > ~/.docker/config.json
 #  docker version
 #- docker run --rm mplatform/mquery golang
-- docker run --rm --privileged multiarch/qemu-user-static:register --reset
 #- ls -al /usr/bin/qemu-aarch64-static
 #- docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
 - docker events& 
