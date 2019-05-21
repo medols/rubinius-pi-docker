@@ -9,4 +9,5 @@ script:
   echo '{ "experimental": "enabled" }' > ~/.docker/config.json
   docker version
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-- docker run aarch64/ubuntu date
+- ls -al /usr/bin/qemu-aarch64-static
+- docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static aarch64/ubuntu /bin/bash --version
