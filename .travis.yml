@@ -3,7 +3,8 @@ services:
 - docker
 language: bash
 script:
-#- sudo apt-get update
+- sudo apt-get update
+- sudo apt-get install qemu-user-static
 #- sudo apt-get install \
 #    apt-transport-https \
 #    ca-certificates \
